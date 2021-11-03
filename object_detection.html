@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>物体検出</title>
+    <!-- TensorFlowライブラリ -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs"></script>
+    <!-- 学習済みモデル「Coco SSD」 -->
+    <script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/coco-ssd"></script>
+    <script src="./object_detection.js"></script>
+    <link rel="stylesheet" href="./object_detection.css">
+  </head>
+  <body onload="init()">
+    <p>物体検出</p>
+
+    <input type="file" accept="image/*" onchange="loadImage(this.files)">
+    最少スコア：
+    <input type="number" id="min" value="50" min="1" max="100">%
+    <input type="button" id="detectButton" value="検出" onclick="detect()">
+    <span id="message"></span>
+    <hr>
+    <canvas id="image"></canvas>
+    <div id="list"></div>
+  </body>
+</html>
