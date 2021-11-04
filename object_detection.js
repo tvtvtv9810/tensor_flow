@@ -100,7 +100,7 @@ const addObject = prediction => {
   // マウスカーソルが入ったときに検出した矩形を描画
   miniCanvas.onmouseenter = () => {
     miniCanvas.classList.add("select");
-    context.strokeStye = "#00CCFF";
+    context.strokeStyle = "#00CCFF";
     context.lineWidth = 4;
     context.strokeRect(x, y, w, h);
   }
